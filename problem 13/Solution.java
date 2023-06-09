@@ -1,53 +1,29 @@
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
-
     public int romanToInt(String s) {
+        
+        Map <Character , Integer> roman_numerals = new HashMap();
+
+        roman_numerals.put('I', 1);
+        roman_numerals.put('V',5);
+        roman_numerals.put('X',10);
+        roman_numerals.put('L',50);
+        roman_numerals.put('C',100);
+        roman_numerals.put('D',500);
+        roman_numerals.put('M',1000);
+
         int total = 0;
-        int i = 0;
-        while (i <= s.length()-1) {
-            if (s.charAt(i)=='I') {
-                if (i != s.length()-1 && s.charAt(i+1) == 'V' ) {
-                    total += 4;
-                    i++;
-                } else if ( i   != s.length()-1 && s.charAt(i+1) == 'X' ) {
-                    total += 9;
-                    i++;
-                } else {
-                    total += 1;
-                }
-            } 
-            else if (s.charAt(i)=='X') {
-                if (i != s.length()-1 && s.charAt(i+1) == 'L') {
-                    total += 40;
-                    i++;
-                } else if (i != s.length()-1 && s.charAt(i+1) == 'C') {
-                    total += 90;
-                    i++;
-                } else {
-                    total += 10;
-                }
-            } 
+        for (int i = 0; i < s.length(); i ++) {
 
-            else if (s.charAt(i)=='C') {
-                if (i != s.length()-1 && s.charAt(i+1) == 'D' ) {
-                    total += 400;
-                    i++;
-                } else if (i != s.length()-1 && s.charAt(i+1) == 'M' ) {
-                    total += 900;
-                    i++;
-                } else {
-                    total += 100;
-                }
-
-            }  else if (s.charAt(i)=='V'){
-                total+= 5;
-            } else if (s.charAt(i) == 'D') {
-                total += 500;
-            } else if (s.charAt(i) == 'L') {
-                total += 50;
-            } else if (s.charAt(i) == 'M') {
-                total += 1000;
+            // if current index higher substract the previous added 2X.
+            if ( i > 0 && roman_numerals.get(s.charAt(i)) > roman_numerals.get(s.charAt(i-1)) ) {
+                total += roman_numerals.get(s.charAt(i)) - ( 2 * roman_numerals.get(s.charAt(i-1)) );
+            } else {
+                total += roman_numerals.get(s.charAt(i));;
             }
-            i++;
+          
         }
         return total;
     }
