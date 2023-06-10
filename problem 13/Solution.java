@@ -2,9 +2,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Solution {
+
+
+    public static void main(String[] args) {
+        
+    }
     public int romanToInt(String s) {
         
-        Map <Character , Integer> roman_numerals = new HashMap();
+        Map <Character , Integer> roman_numerals = new HashMap<>();
 
         roman_numerals.put('I', 1);
         roman_numerals.put('V',5);

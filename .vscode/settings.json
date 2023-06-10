@@ -1,0 +1,6 @@
+{
+  "java.autobuild.enabled": false,
+  "java.references.includeAccessors": false,
+  "java.debug.settings.forceBuildBeforeLaunch": false,
+  "java.debug.settings.onBuildFailureProceed": true
+}

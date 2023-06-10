@@ -4,10 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Solution {
+    public static void main(String[] args) {
+        
+    }
     public int[] twoSum(int[] nums, int target) {
 
         // key, value -> target - nums[i] , i
-        Map<Integer, Integer> complements = new HashMap();
+        Map<Integer, Integer> complements = new HashMap <>();
 
         for (int i = 0; i < nums.length; i++){
 
