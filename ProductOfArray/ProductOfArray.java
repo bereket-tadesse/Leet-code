@@ -4,16 +4,15 @@ class ProductOfArray{
         int k = 3;
         int[] result = new int[nums.length];
         for(int i = 0; i < nums.length; i++) {
-            if (i >= nums.length - k ) {
-                result[i] = nums[(k+i)%nums.length];
+            if (i > nums.length - k ) {
+                result[i] = nums[(k+i)%nums.length-1];
             } else {
-                result[i] = nums[i+k];
+                result[i] = nums[i+k-1];
             } 
         }
-
         
         for (int i = 0; i < result.length; i++){
-        System.out.println(result[i]);
+            System.out.println(result[i]);
         }
         
     }
