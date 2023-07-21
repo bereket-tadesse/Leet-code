@@ -9,8 +9,12 @@ class ConrainsDuplicate {
                 return true;
         }
         return false;
+        
+
     }
 
+ 
+   
     /*
     // using hash map 
     // saves the element and also its number of occurence.
