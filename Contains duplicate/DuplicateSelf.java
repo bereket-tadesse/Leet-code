@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 class DuplicateSelf {
     public boolean containsDuplicate(int[] nums) {
        
@@ -12,5 +14,6 @@ class DuplicateSelf {
             }
             
         }
+        return false;
     }
 }
