@@ -2,7 +2,7 @@ import java.util.Stack;
 
 class problem14 {
     // String and stack
-    // Valid Parentheses
+    // Valid Parentheses  
 
     public boolean isValid(String s) {
 
